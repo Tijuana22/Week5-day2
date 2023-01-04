@@ -59,37 +59,28 @@ for(let i of menuLinks){
 }
 
 
-
- 
-
-
 topMenuEl.addEventListener('click', function(event){
     event.preventDefault();
     let target= event.target
     if (target.nodeName !== "A"){
-      return console.log("invalid element");
+       console.log("invalid element");
     }else {
       console.log(target);
       target.classList.remove("active");
       showingsubMenu= false;
       subMenuEl.style.top = 0;
-      return;
+      return
 
     }
-    topMenuLinks.forEach((a)=>{
+
+
+    topMenuLinks.forEach((a) => {
       a.classList.remove("active");
-      a.classList.add("active");
+      target.classList.add("active");
       showingsubMenu= true
-      
     })
 
 })
 
 // console.log();
 
-// let subMenuE1= document.getElementById('sub-menu');
-// subMenuE1.style.height = '100%';
-// subMenuE1.style.backgroundColor = 'var(--sub-menu-bg)';
-// subMenuE1.classList.add('flex-around');
-// subMenuE1.style.postion = 'absolute';
-// subMenuE1.style.top = '0';
